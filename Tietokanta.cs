@@ -8,7 +8,7 @@ namespace Project
 {
     class SqlQuery
     {
-        // Connection to Database
+        // Yhdistetään tietokantaan
         private const string HOST = "localhost";
         private const string USERNAME = "postgres";
         private const string PASSWORD = "Grespost99";
