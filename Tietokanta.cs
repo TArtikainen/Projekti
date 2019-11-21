@@ -35,7 +35,7 @@ namespace Project
             //Tietokannasta hakeminen
         }
 
-        //Kannettavien palauttamien db:sta
+        //Liittymien palauttaminen tietokannasta
         static public List<Liittyma> Get()
         {
             List<Liittyma> liittymalista = new List<Liittyma>();
