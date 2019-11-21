@@ -8,7 +8,7 @@ namespace Project
 {
     class Tietokanta
     {
-        // Yhdistetään tietokanta
+        // Yhdistetään 
         private const string HOST = "localhost";
         private const string USERNAME = "postgres";
         private const string PASSWORD = "Grespost99";
