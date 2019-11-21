@@ -13,7 +13,7 @@ namespace projekti
 
 
         //Konstruktori
-        public Liittyma(string operaattori, int liittymanopeus, double hinta)
+        public Liittyma(string operaattori, int liittymanopeus, int v, double hinta)
         {
             _operaattori = operaattori;
             _liittymanopeus = liittymanopeus;
