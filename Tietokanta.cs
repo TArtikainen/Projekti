@@ -6,7 +6,7 @@ using projekti;
 
 namespace Project
 {
-    class SqlQuery
+    class Tietokanta
     {
         // Yhdistetään tietokantaan
         private const string HOST = "localhost";
@@ -19,7 +19,7 @@ namespace Project
         static private NpgsqlCommand GetAllLiittyma = null;
         static private NpgsqlCommand addComputer = null;
 
-        //Connecting to database
+        // Yhdistetään tietokantaan
         public static void Connection()
         {
             connection = new NpgsqlConnection(CONNECTION_STRING);
