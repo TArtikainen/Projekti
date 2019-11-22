@@ -16,7 +16,7 @@ namespace projekti
 
 
         //Konstruktori
-        public Liittyma(string operaattori, int liittymanopeus, int v, double hinta)
+        public Liittyma(string operaattori, int liittymanopeus, double hinta)
         {
             _operaattori = operaattori;
             _liittymanopeus = liittymanopeus;
@@ -24,12 +24,6 @@ namespace projekti
 
         }
 
-        public Liittyma(string operaattori, int liittymanopeus, double hinta)
-        {
-            this.operaattori = operaattori;
-            this.liittymanopeus = liittymanopeus;
-            this.hinta = hinta;
-        }
 
         public string GetOperaattori()
         {
