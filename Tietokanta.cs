@@ -16,8 +16,8 @@ namespace WS6_Cars_Object_Persistance
         private const string CONNECTION_STRING = "Host=" + HOST + ";Username=" + USERNAME + ";Password=" + PASSWORD + ";Database=" + DB;
         // Connection is private and gets opened in the constructor and used in all the db transactions
         static private NpgsqlConnection connection;
-        static private NpgsqlCommand selectAllCars = null;
-        static private NpgsqlCommand insertCar = null;
+        static private NpgsqlCommand selectAllliittyma = null;
+        static private NpgsqlCommand insertliittyma = null;
 
         // Constructor: creates the connection to the db
         static CarQueries()
