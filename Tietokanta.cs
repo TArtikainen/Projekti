@@ -4,60 +4,70 @@ using System.Text;
 using Npgsql;
 using projekti;
 
-namespace Project
+namespace WS6_Cars_Object_Persistance
 {
-    class Tietokanta
+    static class CarQueries
     {
-        // Yhdistetään 
+        // DB Connection details
         private const string HOST = "localhost";
         private const string USERNAME = "postgres";
         private const string PASSWORD = "Grespost99";
         private const string DB = "Kannykkaliittymat";
         private const string CONNECTION_STRING = "Host=" + HOST + ";Username=" + USERNAME + ";Password=" + PASSWORD + ";Database=" + DB;
-
+        // Connection is private and gets opened in the constructor and used in all the db transactions
         static private NpgsqlConnection connection;
-        static private NpgsqlCommand GetAllLiittyma = null;
-        static private NpgsqlCommand addComputer = null;
+        static private NpgsqlCommand selectAllCars = null;
+        static private NpgsqlCommand insertCar = null;
 
-        // Yhdistetään tietokantaan
-        public static void Connection()
+        // Constructor: creates the connection to the db
+        static CarQueries()
         {
-            connection = new NpgsqlConnection(CONNECTION_STRING);
-            connection.Open();
-        }
-
-        public static void StoreToSql()
-        {
-            //Tietokantaan lisääminen
-        }
-        public static void GetFromSql()
-        {
-            //Tietokannasta hakeminen
-        }
-
-        //Liittymien palauttaminen tietokannasta
-        static public List<Liittyma> Get()
-        {
-            List<Liittyma> liittymalista = new List<Liittyma>();
-            using (GetAllLiittyma = new NpgsqlCommand("SELECT computer.name,computer.price,computer.storagesize, computer.batterycapacity, computeruse.use, storagetype.storagetype, operatingsystem.operating_system FROM \"computer\" LEFT JOIN storagetype on computer.storagetypeid = storagetype.id LEFT JOIN computeruse on computer.useid = computeruse.id LEFT JOIN operatingsystem on computer.operatingsystemid = operatingsystem.id WHERE batterycapacity > 0;", connection))
+            try
             {
-                GetAllLiittyma.Prepare();
+                connection = new NpgsqlConnection(CONNECTION_STRING);
+                connection.Open(); // Here we open connection
+            }
+            catch (NpgsqlException ex)
+            {
+                throw new NpgsqlException($"Error in database connection ({ ex.Message }).");
+            }
 
-                using (NpgsqlDataReader computers = GetAllLiittyma.ExecuteReader())
+        }
 
-                    while (computers.Read())
+        // GetAllCars gets all the cars from the database into a generic list
+        static public List<Liityma> GetAllCars()
+        {
+            List<Liittyma> list = new List<Liittyma>();
+            using (selectAllCars = new NpgsqlCommand("SELECT * FROM liittyma", connection))
+            {
+                selectAllCars.Prepare(); // Prepare the select query that gets all cars from the database
+
+                using (NpgsqlDataReader results = selectAllCars.ExecuteReader())
+                {
+                    bool success;
+
+                    while (results.Read())
                     {
-                        liittymalista.Add(new Liittyma(computers.GetString(0), computers.GetInt32(1), computers.GetInt32(2), computers.GetInt32(3), computers.GetString(4), computers.GetString(5), computers.GetString(6)));
-                        Console.WriteLine($" {computers.GetString(0)} {computers.GetInt32(1)} {computers.GetInt32(2)} {computers.GetInt32(3)} {computers.GetString(4)} {computers.GetString(5)} {computers.GetString(6)}");
+                        list.Add(new Car(results.GetString(0), results.GetString(1), results.GetString(2), results.GetInt32(3), out success));
                     }
-                return liittymalista;
+                }
+            }
+
+            return list;
+        }
+
+        // AddCar adds a car to DB
+        static public void AddCar(Vehicle car)
+        {
+            using (insertCar = new NpgsqlCommand("INSERT INTO Liittyma(liittymanopeus, hinta) " +
+            "VALUES (@liittymanopeus, @hinta)", connection))
+            {
+                insertCar.Parameters.AddWithValue("platenr", Liittyma.GetPlateNumber());
+                insertCar.Parameters.AddWithValue("colour", Lii.GetColour());
+                insertCar.Parameters.AddWithValue("model", car.GetModel());
+                insertCar.Parameters.AddWithValue("year", car.GetYear());
+                insertCar.ExecuteNonQuery();
             }
         }
-
-        
     }
 }
-
-    
-
-
