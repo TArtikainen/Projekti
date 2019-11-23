@@ -70,6 +70,9 @@ namespace projekti
                         
 
                         Yritysliittyma uusiLiittyma = new Yritysliittyma(yritysoperaattori, yritysnopeus, yrityshinta);
+
+                        Tietokanta.LisaaLiittyma(uusiLiittyma);
+
                         liittymalista.Add(uusiLiittyma);
                         Console.WriteLine($"Yritysliittymän ID numero on {uusiLiittyma.GetLiittymaID()}. Liittyman operaattori on { uusiLiittyma.GetOperaattori() } liittymanopeudella { uusiLiittyma.GetLiittymaNopeus()} Mbit/s hinnaltaan {uusiLiittyma.GetHinta()} euroa on lisätty.");
                         Console.WriteLine();

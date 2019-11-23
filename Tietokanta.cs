@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Npgsql;
 
-namespace projekti;
+namespace projekti
 {
     static class Tietokanta
     {
@@ -16,7 +16,7 @@ namespace projekti;
         // Connection is private and gets opened in the constructor and used in all the db transactions
         static private NpgsqlConnection connection;
         //static private NpgsqlCommand selectAllCars = null;
-        static private NpgsqlCommand insertCar = null;
+        static private NpgsqlCommand insertYritysLiittyma = null;
 
         // Constructor: creates the connection to the db
         static Tietokanta()
@@ -32,7 +32,7 @@ namespace projekti;
             }
 
         }
-
+        /*
         // GetAllCars gets all the cars from the database into a generic list
         static public List<Liittyma> GetAllLiittyma()
         {
@@ -54,18 +54,18 @@ namespace projekti;
 
             return list;
         }
+        */
 
-        // AddCar adds a car to DB
+        // LisaaLiittyma lisää liittyman tietokantaan
         static public void LisaaLiittyma(Liittyma liittyma)
         {
-            using (insertCar = new NpgsqlCommand("INSERT INTO Liittyma() " +
-            "VALUES (@platenr, @colour, @model, @year)", connection))
+            using (insertYritysLiittyma = new NpgsqlCommand("INSERT INTO yritysliittyma(operaattori, datanopeus, hinta)" +
+            "VALUES (@operaattori, @datanopeus, @hinta)", connection))
             {
-                insertCar.Parameters.AddWithValue("platenr", liittyma.GetPlateNumber());
-                insertCar.Parameters.AddWithValue("colour", liittyma.GetColour());
-                insertCar.Parameters.AddWithValue("model", liittyma.GetModel());
-                insertCar.Parameters.AddWithValue("year", liittyma.GetYear());
-                insertCar.ExecuteNonQuery();
+                insertYritysLiittyma.Parameters.AddWithValue("@operaattori", liittyma.GetOperaattori());
+                insertYritysLiittyma.Parameters.AddWithValue("@datanopeus", liittyma.GetLiittymaNopeus());
+                insertYritysLiittyma.Parameters.AddWithValue("@hinta", liittyma.GetHinta());
+                insertYritysLiittyma.ExecuteNonQuery();
             }
         }
     }

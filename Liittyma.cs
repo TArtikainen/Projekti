@@ -10,7 +10,7 @@ namespace projekti
         private string _operaattori;
         private int _liittymanopeus;
         private double _hinta;
-        private string operaattori;
+        //private string operaattori;
         private int liittymanopeus;
         private double hinta;
 
