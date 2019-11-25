@@ -9,7 +9,7 @@ namespace projekti
         
     {
         private int puhNro;
-        
+
         /* Konstruktori */
         public Perusliittyma(string operaattori, int liittymanopeus, double hinta) : base(operaattori, liittymanopeus, hinta)
         {
@@ -19,11 +19,12 @@ namespace projekti
             
         }
 
+        /*
         public int GetRandomNumber()
         {
             return puhNro;
         }
-
+        */
 
         
         

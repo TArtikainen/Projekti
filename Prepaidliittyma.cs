@@ -2,7 +2,7 @@
 
 namespace projekti
 {
-    class Prepaidliittyma : Liittyma
+    class Prepaidliittyma : Yritysliittyma
     {
         
         private DateTime _voimassaoloaika;

@@ -13,14 +13,19 @@ namespace projekti
         private static double perushinta;
         private static int prepaidnopeus;
         private static double prepaidhinta;
+        
 
         static void Main(string[] args)
         {
             
             int response;
-            List<Liittyma> liittymalista = new List<Liittyma>();
-          
-            do
+            List<Liittyma> liittymalista = new List<Liittyma>();    //Luodaan lista liittymille 
+            
+            List<Liittyma> listaliittymista = new List<Liittyma>();
+            //listaliittymista = Tietokanta.valitseYritysLiittyma();
+
+
+            do                                                      // Loopataan
 
             {
                 Console.WriteLine("Tallennusohjelma kännykkäliittymille");
@@ -34,7 +39,7 @@ namespace projekti
                 response = int.Parse(Console.ReadLine());
 
 
-                switch (response)
+                switch (response)       //switch case lausekkeet suoritettaviin lohkoihin
                 {
                     case 1:
                         Console.Write("Syötä yritysliittymän operaattori:");
@@ -71,7 +76,8 @@ namespace projekti
 
                         Yritysliittyma uusiLiittyma = new Yritysliittyma(yritysoperaattori, yritysnopeus, yrityshinta);
 
-                        Tietokanta.LisaaLiittyma(uusiLiittyma);
+                        Tietokanta.LisaaYritysLiittyma(uusiLiittyma);
+                      
 
                         liittymalista.Add(uusiLiittyma);
                         Console.WriteLine($"Yritysliittymän ID numero on {uusiLiittyma.GetLiittymaID()}. Liittyman operaattori on { uusiLiittyma.GetOperaattori() } liittymanopeudella { uusiLiittyma.GetLiittymaNopeus()} Mbit/s hinnaltaan {uusiLiittyma.GetHinta()} euroa on lisätty.");
@@ -110,6 +116,9 @@ namespace projekti
 
 
                         Perusliittyma uusiLiittyma2 = new Perusliittyma(perusoperaattori, perusnopeus, perushinta);
+
+                        Tietokanta.LisaaPerusLiittyma(uusiLiittyma2);
+
                         liittymalista.Add(uusiLiittyma2);
                         Console.WriteLine($"Perusliittymä { uusiLiittyma2.GetOperaattori() } liittymanopeudella { uusiLiittyma2.GetLiittymaNopeus()} Mbit/s hinnaltaan {uusiLiittyma2.GetHinta()} euroa on lisätty. Liittymän puhelinnumero on {uusiLiittyma2.GetRandomNumber()} ");
                         Console.WriteLine();
@@ -148,6 +157,9 @@ namespace projekti
                         
 
                         Prepaidliittyma uusiLiittyma3 = new Prepaidliittyma(prepaidoperaattori, prepaidnopeus, prepaidhinta);
+
+                        Tietokanta.LisaaPrepaidLiittyma(uusiLiittyma3);
+
                         liittymalista.Add(uusiLiittyma3);
                         Console.WriteLine($"Prepaidliittymä { uusiLiittyma3.GetOperaattori() } liittymanopeudella { uusiLiittyma3.GetLiittymaNopeus()} Mbit/s hinnaltaan {uusiLiittyma3.GetHinta()} euroa on lisätty. Liittymä on käytössä 6kk rekisteröinnin jälkeen. Viimeinen voimassaolopäivä on {uusiLiittyma3.GetVoimassaolo} ");
                         Console.WriteLine();
@@ -188,6 +200,19 @@ namespace projekti
 
                         }
                         break;
+
+                    case 7:
+
+                        foreach (Yritysliittyma Liittyma in listaliittymista)
+                        {
+
+                            Console.WriteLine(Liittyma.GetLiittymaNopeus());
+
+
+                        }
+                        break;
+
+
                 }
             }
 
