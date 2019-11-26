@@ -8,27 +8,12 @@ namespace projekti
 
         
     {
-        private int puhNro;
+        
 
         /* Konstruktori */
-        public Perusliittyma(string operaattori, int liittymanopeus, double hinta) : base(operaattori, liittymanopeus, hinta)
+        public Perusliittyma(int puhNro, string operaattori, int liittymanopeus, double hinta) : base(puhNro, operaattori, liittymanopeus, hinta)
         {
-
-            Random r = new Random();            /* Luodaan kuuden numeron satunnaisluku puhelinnumeroa varten */
-            puhNro = r.Next(100000, 999999);
             
         }
-
-        /*
-        public int GetRandomNumber()
-        {
-            return puhNro;
-        }
-        */
-
-        
-        
-       
-        
     }
 }

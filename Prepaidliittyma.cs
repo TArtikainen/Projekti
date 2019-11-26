@@ -9,7 +9,7 @@ namespace projekti
 
 
         // konstruktori
-        public Prepaidliittyma(string operaattori, int liittymanopeus, double hinta) : base(operaattori, liittymanopeus, hinta)
+        public Prepaidliittyma(int puhNro, string operaattori, int liittymanopeus, double hinta) : base(puhNro, operaattori, liittymanopeus, hinta)
         {
             _voimassaoloaika = DateTime.Today.AddDays(180);
 

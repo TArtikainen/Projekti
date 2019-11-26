@@ -10,25 +10,26 @@ namespace projekti
         private string _operaattori;
         private int _liittymanopeus;
         private double _hinta;
-        private int puhNro;
+        private int _puhNro;
 
 
 
 
         //Konstruktori
-        public Liittyma(string operaattori, int liittymanopeus, double hinta)
+        public Liittyma(int puhNro, string operaattori, int liittymanopeus, double hinta)
         {
             _operaattori = operaattori;
             _liittymanopeus = liittymanopeus;
             this._hinta = hinta;
+            _puhNro = puhNro;
 
 
             Random r = new Random();            /* Luodaan kuuden numeron satunnaisluku puhelinnumeroa varten */
-            puhNro = r.Next(100000, 999999);
+            _puhNro = r.Next(100000, 999999);
 
         }
 
-        public Liittyma(string operaattori, int liittymanopeus, double hinta, out bool success) : this(operaattori, liittymanopeus, hinta)
+        public Liittyma(int puhNro, string operaattori, int liittymanopeus, double hinta, out bool success) : this(puhNro, operaattori, liittymanopeus, hinta)
         {
             success = false;
         }
@@ -55,7 +56,7 @@ namespace projekti
 
         public int GetRandomNumber()
         {
-            return puhNro;
+            return _puhNro;
         }
 
     }

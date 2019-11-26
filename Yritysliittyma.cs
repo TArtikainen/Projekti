@@ -5,33 +5,29 @@ using System.Text;
 namespace projekti
 {
 
-    class Yritysliittyma : Liittyma
+    class Yritysliittyma : Liittyma                                             //Yrityliittyma perii liittyman
     {
         
         static int _liittymaID=0;
 
 
-        public Yritysliittyma(string operaattori, int liittymanopeus, double hinta) : base(operaattori, liittymanopeus, hinta)
+        public Yritysliittyma(int puhNro, string operaattori, int liittymanopeus, double hinta) : base(puhNro, operaattori, liittymanopeus, hinta)
         {
             _liittymaID++;
-
            
+
         }
 
-        public Yritysliittyma(string operaattori, int liittymanopeus, double hinta, out bool success) : this( operaattori, liittymanopeus, hinta)
+        public Yritysliittyma(int puhNro, string operaattori, int liittymanopeus, double hinta, out bool success) : this( puhNro, operaattori, liittymanopeus, hinta)
         {
             success = false;
         }
 
+        //Getteri yritysliittyman id numerolle
         public int GetLiittymaID()
         {
             return _liittymaID;
         }
-
-
-
-
-
 
     }
 
