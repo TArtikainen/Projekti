@@ -4,7 +4,7 @@ namespace projekti
 {
     class Prepaidliittyma : Yritysliittyma
     {
-        
+
         private DateTime _voimassaoloaika;
 
 
@@ -17,27 +17,22 @@ namespace projekti
 
         public DateTime GetVoimassaolo
 
-            // Luodaan property prepaidliittymän viimeiselle voimassaolopäivämäärälle
+        // Luodaan property prepaidliittymän viimeiselle voimassaolopäivämäärälle
         {
-            get{
-
-            return _voimassaoloaika;
+            get
+            {
+                return _voimassaoloaika;
             }
 
-            set {
-
-                
-
-
+            set
+            {
                 DateTime today = DateTime.Today;
-                DateTime _voimassaoloaika = today.AddDays(180); 
-
-                
+                DateTime _voimassaoloaika = today.AddDays(180);
 
             }
-            
+
         }
 
-        
+
     }
 }

@@ -27,7 +27,7 @@ namespace projekti
         static Tietokanta()
         {
             try                                                   // try catch tietokannan yhdistämisen onnistumista varten
-            {                                                               
+            {
                 connection = new NpgsqlConnection(CONNECTION_STRING);
                 connection.Open(); // Here we open connection
             }
@@ -37,12 +37,12 @@ namespace projekti
             }
 
         }
-        
+
         // valitseYritysliittyma valitsee kaikki yritysliittymat tietokannasta
         static public List<Liittyma> valitseYritysLiittyma()
         {
             List<Liittyma> list = new List<Liittyma>();
-            using (selectYritysLiittyma = new NpgsqlCommand("SELECT * FROM yritysliittyma", connection))
+            using (selectYritysLiittyma = new NpgsqlCommand("SELECT * FROM yritysliittymat", connection))
             {
                 selectYritysLiittyma.Prepare(); // Valmistelee valitun kyselyn, joka saa kaikki yritysliittymat tietokannasta
 
@@ -62,7 +62,7 @@ namespace projekti
         static public List<Liittyma> valitsePerusLiittyma()
         {
             List<Liittyma> list = new List<Liittyma>();
-            using (selectPerusLiittyma = new NpgsqlCommand("SELECT * FROM perusliittyma", connection))
+            using (selectPerusLiittyma = new NpgsqlCommand("SELECT * FROM perusliittymat", connection))
             {
                 selectPerusLiittyma.Prepare(); // Valmistelee valitun kyselyn, joka saa kaikki perusliittymat tietokannasta
 
@@ -82,7 +82,7 @@ namespace projekti
         static public List<Liittyma> valitsePrepaidLiittyma()
         {
             List<Liittyma> list = new List<Liittyma>();
-            using (selectPrepaidLiittyma = new NpgsqlCommand("SELECT * FROM prepaidliittyma", connection))
+            using (selectPrepaidLiittyma = new NpgsqlCommand("SELECT * FROM prepaidliittymat", connection))
             {
                 selectPrepaidLiittyma.Prepare(); // Valmistelee valitun kyselyn, joka saa kaikki prepaidliittymat tietokannasta
 
@@ -101,7 +101,7 @@ namespace projekti
         // LisaaYritysLiittyma lisää liittyman yritys tietokantaan
         static public void LisaaYritysLiittyma(Liittyma liittyma)
         {
-            using (insertYritysLiittyma = new NpgsqlCommand("INSERT INTO yritysliittyma(puhelinnumero, operaattori, datanopeus, hinta)" +
+            using (insertYritysLiittyma = new NpgsqlCommand("INSERT INTO yritysliittymat(puhelinnumero, operaattori, datanopeus, hinta)" +
             "VALUES (@puhelinnumero, @operaattori, @datanopeus, @hinta)", connection))
             {
                 insertYritysLiittyma.Parameters.AddWithValue("@puhelinnumero", liittyma.GetRandomNumber());
@@ -115,7 +115,7 @@ namespace projekti
         // LisaaPerusLiittyma lisää liittyman perusliittyman tietokantaan
         static public void LisaaPerusLiittyma(Liittyma liittyma)
         {
-            using (insertPerusLiittyma = new NpgsqlCommand("INSERT INTO perusliittyma(puhelinnumero, operaattori, datanopeus, hinta)" +
+            using (insertPerusLiittyma = new NpgsqlCommand("INSERT INTO perusliittymat(puhelinnumero, operaattori, datanopeus, hinta)" +
             "VALUES (@puhelinnumero, @operaattori, @datanopeus, @hinta)", connection))
             {
 
@@ -130,7 +130,7 @@ namespace projekti
         // LisaaPrepaidLiittyma lisää liittyman prepaid tietokantaan
         static public void LisaaPrepaidLiittyma(Liittyma liittyma)
         {
-            using (insertPrepaidLiittyma = new NpgsqlCommand("INSERT INTO prepaidliittyma(puhelinnumero, operaattori, datanopeus, hinta)" +
+            using (insertPrepaidLiittyma = new NpgsqlCommand("INSERT INTO prepaidliittymat(puhelinnumero, operaattori, datanopeus, hinta)" +
             "VALUES (@puhelinnumero, @operaattori, @datanopeus, @hinta)", connection))
             {
 
@@ -141,5 +141,5 @@ namespace projekti
                 insertPrepaidLiittyma.ExecuteNonQuery();
             }
         }
-}
+    }
 }

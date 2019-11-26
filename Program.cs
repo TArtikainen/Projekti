@@ -19,10 +19,10 @@ namespace projekti
 
         static void Main(string[] args)
         {
-            
+
             int response;
             //List<Liittyma> liittymalista = new List<Liittyma>();    //Luodaan lista liittymille 
-            
+
             List<Liittyma> listayritysliittyma = new List<Liittyma>();  //Luodaan lista yritysliittymille 
             listayritysliittyma = Tietokanta.valitseYritysLiittyma();
 
@@ -54,8 +54,8 @@ namespace projekti
                         string yritysoperaattori = Console.ReadLine();
 
                         Console.Write("Syötä liittyman datasiirtonopeus numeroina:");
-                                                
-                       
+
+
                         try                                                 //try catch kokonaisluvun selvittamiseen
                         {
                             yritysnopeus = int.Parse(Console.ReadLine());
@@ -66,7 +66,7 @@ namespace projekti
                             Console.WriteLine($"Väärin syötetty datasiirtonopeus.\nDatasiirtonopeutta ei tallennettu. ");
                         }
 
-                        
+
 
                         Console.Write("Syötä hinta numeroina:");
 
@@ -80,12 +80,12 @@ namespace projekti
                             Console.WriteLine($"Väärin syötetty hinta.\nHintaa ei tallennettu. ");
                         }
 
-                        
+
 
                         Yritysliittyma uusiLiittyma = new Yritysliittyma(puhNro, yritysoperaattori, yritysnopeus, yrityshinta);
 
                         Tietokanta.LisaaYritysLiittyma(uusiLiittyma);
-                      
+
 
                         //liittymalista.Add(uusiLiittyma);
                         Console.WriteLine($"Yritysliittymän ID numero on {uusiLiittyma.GetLiittymaID()}. Liittyman operaattori on { uusiLiittyma.GetOperaattori() } liittymanopeudella { uusiLiittyma.GetLiittymaNopeus()} Mbit/s hinnaltaan {uusiLiittyma.GetHinta()} euroa on lisätty.");
@@ -108,7 +108,7 @@ namespace projekti
                             Console.WriteLine($"Väärin syötetty datasiirtonopeus.\nDatasiirtonopeutta ei tallennettu. ");
                         }
 
-                        
+
                         Console.Write("Syötä hinta numeroina:");
 
                         try                                                         //try catch kokonaisluvun selvittamiseen
@@ -149,7 +149,7 @@ namespace projekti
                             Console.WriteLine($"Väärin syötetty datasiirtonopeus.\nDatasiirtonopeutta ei tallennettu. ");
                         }
 
-                        
+
                         Console.Write("Syötä hinta numeroina:");
 
                         try                                                         //try catch kokonaisluvun selvittamiseen
@@ -162,7 +162,7 @@ namespace projekti
                             Console.WriteLine($"Väärin syötetty hinta.\nHintaa ei tallennettu. ");
                         }
 
-                        
+
 
                         Prepaidliittyma uusiLiittyma3 = new Prepaidliittyma(puhNro, prepaidoperaattori, prepaidnopeus, prepaidhinta);
 
@@ -181,7 +181,6 @@ namespace projekti
                         {
                             Console.WriteLine($" Yritysliittyman {item.GetOperaattori()} liittymanopeus on{item.GetLiittymaNopeus()} Mbit/s on hinnaltaan {item.GetHinta()} euroa. Yritysliittymän ID numero on {item.GetLiittymaID()}");
                             Console.WriteLine();
-
                         }
                         */
 
@@ -197,7 +196,7 @@ namespace projekti
                         break;
 
 
-                        
+
 
                     case 5:
                         /*
@@ -218,7 +217,7 @@ namespace projekti
                         }
                         break;
 
-                        
+
 
                     case 6:
                         /* Syötettyjen tietojen tulostus

@@ -7,18 +7,16 @@ namespace projekti
 
     class Yritysliittyma : Liittyma                                             //Yrityliittyma perii liittyman
     {
-        
-        static int _liittymaID=0;
+
+        static int _liittymaID = 0;
 
 
         public Yritysliittyma(int puhNro, string operaattori, int liittymanopeus, double hinta) : base(puhNro, operaattori, liittymanopeus, hinta)
         {
             _liittymaID++;
-           
-
         }
 
-        public Yritysliittyma(int puhNro, string operaattori, int liittymanopeus, double hinta, out bool success) : this( puhNro, operaattori, liittymanopeus, hinta)
+        public Yritysliittyma(int puhNro, string operaattori, int liittymanopeus, double hinta, out bool success) : this(puhNro, operaattori, liittymanopeus, hinta)
         {
             success = false;
         }
