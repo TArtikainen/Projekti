@@ -14,26 +14,26 @@ namespace projekti
         private static int prepaidnopeus;
         private static double prepaidhinta;
         private static int puhNro;
-
+        
 
 
         static void Main(string[] args)
         {
-
+            bool loop = true;
             int response;
-            //List<Liittyma> liittymalista = new List<Liittyma>();    //Luodaan lista liittymille 
+            //List<Liittyma> liittymalista = new List<Liittyma>();          //Luodaan lista liittymille 
 
-            List<Liittyma> listayritysliittyma = new List<Liittyma>();  //Luodaan lista yritysliittymille 
+            List<Liittyma> listayritysliittyma = new List<Liittyma>();      //Luodaan lista yritysliittymille 
             listayritysliittyma = Tietokanta.valitseYritysLiittyma();
 
-            List<Liittyma> listaperusliittyma = new List<Liittyma>();   //Luodaan lista perusliittymille 
+            List<Liittyma> listaperusliittyma = new List<Liittyma>();       //Luodaan lista perusliittymille 
             listaperusliittyma = Tietokanta.valitsePerusLiittyma();
 
             List<Liittyma> listaprepaidliittyma = new List<Liittyma>();     //Luodaan lista prepaidliittymille 
             listaprepaidliittyma = Tietokanta.valitsePrepaidLiittyma();
 
 
-            do                                                              // Do While looppi valikon lohkoille
+            while (loop == true)                                            // While looppi valikon lohkoille
 
             {
                 Console.WriteLine("Tallennusohjelma kännykkäliittymille");  //Tulostetaan valikko  
@@ -44,6 +44,7 @@ namespace projekti
                 Console.WriteLine("4 - Tulosta syötettyjen yritysliittymien tiedot");
                 Console.WriteLine("5 - Tulosta syötettyjen perusliittymien tiedot");
                 Console.WriteLine("6 - Tulosta syötettyjen prepaidliittymien tiedot");
+                Console.WriteLine("7 - Lopeta ohjelma");
                 response = int.Parse(Console.ReadLine());
 
 
@@ -84,7 +85,7 @@ namespace projekti
 
                         Yritysliittyma uusiLiittyma = new Yritysliittyma(puhNro, yritysoperaattori, yritysnopeus, yrityshinta);
 
-                        Tietokanta.LisaaYritysLiittyma(uusiLiittyma);
+                        Tietokanta.LisaaYritysLiittyma(uusiLiittyma);       //Lisätään tietokantaan syötetyt arvot
 
 
                         //liittymalista.Add(uusiLiittyma);
@@ -125,7 +126,7 @@ namespace projekti
 
                         Perusliittyma uusiLiittyma2 = new Perusliittyma(puhNro, perusoperaattori, perusnopeus, perushinta);
 
-                        Tietokanta.LisaaPerusLiittyma(uusiLiittyma2);
+                        Tietokanta.LisaaPerusLiittyma(uusiLiittyma2);               //Lisätään tietokantaan syötetyt arvot
 
                         //liittymalista.Add(uusiLiittyma2);
                         Console.WriteLine($"Perusliittymä { uusiLiittyma2.GetOperaattori() } liittymanopeudella { uusiLiittyma2.GetLiittymaNopeus()} Mbit/s hinnaltaan {uusiLiittyma2.GetHinta()} euroa on lisätty. Liittymän puhelinnumero on {uusiLiittyma2.GetRandomNumber()} ");
@@ -166,7 +167,7 @@ namespace projekti
 
                         Prepaidliittyma uusiLiittyma3 = new Prepaidliittyma(puhNro, prepaidoperaattori, prepaidnopeus, prepaidhinta);
 
-                        Tietokanta.LisaaPrepaidLiittyma(uusiLiittyma3);
+                        Tietokanta.LisaaPrepaidLiittyma(uusiLiittyma3);             //Lisätään tietokantaan syötetyt arvot
 
                         //liittymalista.Add(uusiLiittyma3);
                         Console.WriteLine($"Prepaidliittymä { uusiLiittyma3.GetOperaattori() } liittymanopeudella { uusiLiittyma3.GetLiittymaNopeus()} Mbit/s hinnaltaan {uusiLiittyma3.GetHinta()} euroa on lisätty. Liittymä on käytössä 6kk rekisteröinnin jälkeen. Viimeinen voimassaolopäivä on {uusiLiittyma3.GetVoimassaolo} ");
@@ -238,11 +239,17 @@ namespace projekti
 
                         }
                         break;
+
+                    //Ohjelman lopetus
+                    case 7:             
+                        loop = false;
+
+                        break;
                 }
             }
 
 
-            while (response > 0);
+            
         }
     }
 }

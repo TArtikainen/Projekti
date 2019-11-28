@@ -10,7 +10,7 @@ namespace projekti
 
         static int _liittymaID = 0;
 
-
+        //Konstruktori
         public Yritysliittyma(int puhNro, string operaattori, int liittymanopeus, double hinta) : base(puhNro, operaattori, liittymanopeus, hinta)
         {
             _liittymaID++;
