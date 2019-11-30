@@ -189,7 +189,7 @@ namespace projekti
                         foreach (Yritysliittyma Liittyma in listayritysliittyma)
                         {
 
-                            Console.WriteLine($" Yritysliittyman puhelinnumero on {Liittyma.GetRandomNumber()}. Operaattorin {Liittyma.GetOperaattori()} liittymanopeus on {Liittyma.GetLiittymaNopeus()} Mbit/s on hinnaltaan {Liittyma.GetHinta()} euroa");
+                            Console.WriteLine($" Yritysliittyman puhelinnumero on {Liittyma.GetRandomNumber()}. Operaattorin {Liittyma.GetOperaattori()} liittymanopeus on {Liittyma.GetLiittymaNopeus()} Mbit/s.\n Liittyma on hinnaltaan {Liittyma.GetHinta()} euroa");
                             Console.WriteLine();
 
 
@@ -211,7 +211,7 @@ namespace projekti
                         foreach (Perusliittyma Liittyma in listaperusliittyma)
                         {
 
-                            Console.WriteLine($" Perusliittyman puhelinnumero on {Liittyma.GetRandomNumber()}. Operaattorin {Liittyma.GetOperaattori()} liittymanopeus on {Liittyma.GetLiittymaNopeus()} Mbit/s on hinnaltaan {Liittyma.GetHinta()} euroa");
+                            Console.WriteLine($" Perusliittyman puhelinnumero on {Liittyma.GetRandomNumber()}. Operaattorin {Liittyma.GetOperaattori()} liittymanopeus on {Liittyma.GetLiittymaNopeus()} Mbit/s.\n Liittyma on hinnaltaan {Liittyma.GetHinta()} euroa");
                             Console.WriteLine();
 
 
@@ -233,7 +233,7 @@ namespace projekti
                         foreach (Prepaidliittyma Liittyma in listaprepaidliittyma)
                         {
 
-                            Console.WriteLine($" liittyman puhelinnumero on {Liittyma.GetRandomNumber()}. Operaattorin {Liittyma.GetOperaattori()} liittymanopeus on {Liittyma.GetLiittymaNopeus()} Mbit/s on hinnaltaan {Liittyma.GetHinta()} euroa");
+                            Console.WriteLine($" Prepaidliittyman puhelinnumero on {Liittyma.GetRandomNumber()}. Operaattorin {Liittyma.GetOperaattori()} liittymanopeus on {Liittyma.GetLiittymaNopeus()} Mbit/s.\n Liittyma on hinnaltaan {Liittyma.GetHinta()} euroa");
                             Console.WriteLine();
 
 

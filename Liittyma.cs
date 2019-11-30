@@ -54,6 +54,7 @@ namespace projekti
             return _hinta;
         }
 
+        //Luodaan liittyman puhelinnumerolle getteri
         public int GetRandomNumber()
         {
             return _puhNro;
