@@ -29,7 +29,7 @@ namespace projekti
             try                                                   // try catch tietokannan yhdistämisen onnistumista varten
             {
                 connection = new NpgsqlConnection(CONNECTION_STRING);
-                connection.Open(); // Here we open connection
+                connection.Open(); // Avataan yhteys
             }
             catch (NpgsqlException ex)
             {
@@ -98,7 +98,7 @@ namespace projekti
             return list;
         }
 
-        // LisaaYritysLiittyma lisää liittyman yritys tietokantaan
+        // LisaaYritysLiittyma lisää liittyman yritysliittymien tietokantaan
         static public void LisaaYritysLiittyma(Liittyma liittyma)
         {
             using (insertYritysLiittyma = new NpgsqlCommand("INSERT INTO yritysliittymat(puhelinnumero, operaattori, datanopeus, hinta)" +
@@ -112,7 +112,7 @@ namespace projekti
             }
         }
 
-        // LisaaPerusLiittyma lisää liittyman perusliittyman tietokantaan
+        // LisaaPerusLiittyma lisää liittyman perusliittymien tietokantaan
         static public void LisaaPerusLiittyma(Liittyma liittyma)
         {
             using (insertPerusLiittyma = new NpgsqlCommand("INSERT INTO perusliittymat(puhelinnumero, operaattori, datanopeus, hinta)" +
@@ -127,7 +127,7 @@ namespace projekti
             }
         }
 
-        // LisaaPrepaidLiittyma lisää liittyman prepaid tietokantaan
+        // LisaaPrepaidLiittyma lisää liittyman prepaidliittymien tietokantaan
         static public void LisaaPrepaidLiittyma(Liittyma liittyma)
         {
             using (insertPrepaidLiittyma = new NpgsqlCommand("INSERT INTO prepaidliittymat(puhelinnumero, operaattori, datanopeus, hinta)" +
