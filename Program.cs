@@ -33,7 +33,7 @@ namespace projekti
             listaprepaidliittyma = Tietokanta.valitsePrepaidLiittyma();
 
 
-            while (loop == true)                                            // While looppi valikon lohkoille
+            while (loop == true)                                            // Luodaan While looppi valikon lohkoille
 
             {
                 Console.WriteLine("Tallennusohjelma kännykkäliittymille");  //Tulostetaan valikko  
