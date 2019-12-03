@@ -6,7 +6,7 @@ namespace projekti
 {
     class Liittyma
     {
-        //Attribuutit
+        //Attribuutit!
         private string _operaattori;
         private int _liittymanopeus;
         private double _hinta;
