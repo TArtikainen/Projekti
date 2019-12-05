@@ -5,7 +5,31 @@
 -- Dumped from database version 12.0
 -- Dumped by pg_dump version 12.0
 
--- Started on 2019-12-05 19:48:58
+-- Started on 2019-12-05 19:51:37
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+DROP DATABASE "Kannykkaliittymat";
+--
+-- TOC entry 2838 (class 1262 OID 16464)
+-- Name: Kannykkaliittymat; Type: DATABASE; Schema: -; Owner: postgres
+--
+
+CREATE DATABASE "Kannykkaliittymat" WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'Finnish_Finland.1252' LC_CTYPE = 'Finnish_Finland.1252';
+
+
+ALTER DATABASE "Kannykkaliittymat" OWNER TO postgres;
+
+\connect "Kannykkaliittymat"
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -153,7 +177,7 @@ ALTER TABLE ONLY public.yritysliittymat
     ADD CONSTRAINT yritysliittymat_pkey PRIMARY KEY (puhelinnumero);
 
 
--- Completed on 2019-12-05 19:49:00
+-- Completed on 2019-12-05 19:51:37
 
 --
 -- PostgreSQL database dump complete
