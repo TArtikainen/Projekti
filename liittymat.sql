@@ -5,7 +5,7 @@
 -- Dumped from database version 12.0
 -- Dumped by pg_dump version 12.0
 
--- Started on 2019-11-30 13:01:13
+-- Started on 2019-12-05 19:48:58
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -88,8 +88,6 @@ ALTER TABLE public.yritysliittymat OWNER TO postgres;
 -- Data for Name: liittyma; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.liittyma (puhelinnumero, operaattori, datanopeus, hinta) FROM stdin;
-\.
 
 
 --
@@ -98,12 +96,10 @@ COPY public.liittyma (puhelinnumero, operaattori, datanopeus, hinta) FROM stdin;
 -- Data for Name: perusliittymat; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.perusliittymat (puhelinnumero, operaattori, datanopeus, hinta) FROM stdin;
-350288	Telia	100	18
-581830	Elisa	150	23
-386948	DNA	250	29
-549322	Telia	200	25
-\.
+INSERT INTO public.perusliittymat (puhelinnumero, operaattori, datanopeus, hinta) VALUES (350288, 'Telia', 100, 18);
+INSERT INTO public.perusliittymat (puhelinnumero, operaattori, datanopeus, hinta) VALUES (581830, 'Elisa', 150, 23);
+INSERT INTO public.perusliittymat (puhelinnumero, operaattori, datanopeus, hinta) VALUES (386948, 'DNA', 250, 29);
+INSERT INTO public.perusliittymat (puhelinnumero, operaattori, datanopeus, hinta) VALUES (549322, 'Telia', 200, 25);
 
 
 --
@@ -112,12 +108,10 @@ COPY public.perusliittymat (puhelinnumero, operaattori, datanopeus, hinta) FROM 
 -- Data for Name: prepaidliittymat; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.prepaidliittymat (puhelinnumero, operaattori, datanopeus, hinta) FROM stdin;
-974278	Telia	100	14
-576153	Elisa	200	24
-566899	Dna	150	19
-588153	Elisa	250	29
-\.
+INSERT INTO public.prepaidliittymat (puhelinnumero, operaattori, datanopeus, hinta) VALUES (974278, 'Telia', 100, 14);
+INSERT INTO public.prepaidliittymat (puhelinnumero, operaattori, datanopeus, hinta) VALUES (576153, 'Elisa', 200, 24);
+INSERT INTO public.prepaidliittymat (puhelinnumero, operaattori, datanopeus, hinta) VALUES (566899, 'Dna', 150, 19);
+INSERT INTO public.prepaidliittymat (puhelinnumero, operaattori, datanopeus, hinta) VALUES (588153, 'Elisa', 250, 29);
 
 
 --
@@ -126,12 +120,10 @@ COPY public.prepaidliittymat (puhelinnumero, operaattori, datanopeus, hinta) FRO
 -- Data for Name: yritysliittymat; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.yritysliittymat (puhelinnumero, operaattori, datanopeus, hinta) FROM stdin;
-931112	Telia	200	25
-314743	Elisa	250	32
-480966	DNA	150	20
-104221	Telia	100	15
-\.
+INSERT INTO public.yritysliittymat (puhelinnumero, operaattori, datanopeus, hinta) VALUES (931112, 'Telia', 200, 25);
+INSERT INTO public.yritysliittymat (puhelinnumero, operaattori, datanopeus, hinta) VALUES (314743, 'Elisa', 250, 32);
+INSERT INTO public.yritysliittymat (puhelinnumero, operaattori, datanopeus, hinta) VALUES (480966, 'DNA', 150, 20);
+INSERT INTO public.yritysliittymat (puhelinnumero, operaattori, datanopeus, hinta) VALUES (104221, 'Telia', 100, 15);
 
 
 --
@@ -161,7 +153,7 @@ ALTER TABLE ONLY public.yritysliittymat
     ADD CONSTRAINT yritysliittymat_pkey PRIMARY KEY (puhelinnumero);
 
 
--- Completed on 2019-11-30 13:01:14
+-- Completed on 2019-12-05 19:49:00
 
 --
 -- PostgreSQL database dump complete
