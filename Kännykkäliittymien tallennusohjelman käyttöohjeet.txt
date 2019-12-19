@@ -1,0 +1,27 @@
+Ohjeet kännykkäliittymien tallennusohjelmalle.
+
+Käynnistetään PgAdin tietokantaohjelma.
+PgAdminiin luodaan uusi database - tietokanta. Tietokannan nimeksi annetaan Kannykkaliittymat.
+Lisätään sql tiedosto tietokantaan -> avataan sql tiedosto tekstieditorilla -> kopioidaan kaikki tiedoston tekstit -> PgAdminissa painetaan hiiren oikeaa painiketta Kannykkaliittymat tietokannan kohdalla ja valitaan valikosta Query Tool.
+Kopioitu teksti liitetään nyt PgAdminin tekstikenttään ja ajetaan se painamalla F5. Tämän jälkeen tietokannan Schemas -> Tables osioon tulee taulut liittyma, perusliittyma, prepaidliittyma ja yritysliittyma.
+ 
+Nyt käynnistetään ohjelma Visual Basicilla. Ohjelman käynnistyessä tulostuu valikko. Valikosta voi valita tallennetaanko yritys-, perus- tai prepaidliittymän tiedot.
+Valitaan vaihtoehdoista 1-3 tallennettava liittymätyyppi.
+Valinnalla 1 voidaan tallentaa yritysliittymän tiedot.
+Valinnalla 2 voidaan tallentaa perusliittymän tiedot.
+Valinnalla 3 voidaan tallentaa prepaidliittyman tiedot.
+Valinnan jälkeen liittymätietoihin syötetään operaattorin nimi, liittymän datanopeus ja hinta.
+Tietojen syöttämisen jälkeen tiedot tallennetaan enterillä.
+Syötetyt tiedot tulostuvat näytölle ja tallentuvat myös tietokantaan.
+Yritysliittymillä tulostuu syötettyjen tietojen lisäksi Id numero liittymille. 
+Perusliittymillä tulostuu syötettyjen tietojen lisäksi luotu puhelinnumero.
+Prepaidliittymillä tulostuu syötettyjen tietojen lisäksi liittymän viimeinen voimassaolopäivämäärä.
+
+Tallennetut tiedot tulostuvat valinnoilla 4-6.
+Valinnalla 4 tulostuvat yritysliittyman tiedot.
+Valinnalla 5 tulostuvat perusliittyman tiedot.
+Valinnalla 6 tulostuvat prepaidliittyman tiedot.
+Tiedot ovat tallennettu tietokantaan ja tulostuvat myös tietokannasta.
+Tietokantaan tallennettujen tietojen lisäksi jokaiselle liittymälle on luotu uusi puhelinnumero.
+
+Valinnalla 7 ohjelman lopetus.
