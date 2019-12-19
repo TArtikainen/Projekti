@@ -2,7 +2,7 @@ Ohjeet k‰nnykk‰liittymien tallennusohjelmalle.
 
 K‰ynnistet‰‰n PgAdin tietokantaohjelma.
 PgAdminiin luodaan uusi database - tietokanta. Tietokannan nimeksi annetaan Kannykkaliittymat.
-Lis‰t‰‰n sql tiedosto tietokantaan -> avataan sql tiedosto tekstieditorilla -> kopioidaan kaikki tiedoston tekstit -> PgAdminissa painetaan hiiren oikeaa painiketta Kannykkaliittymat tietokannan kohdalla ja valitaan valikosta Query Tool.
+Lis‰t‰‰n liittymat.sql tiedosto tietokantaan -> avataan liittymat.sql tiedosto tekstieditorilla -> kopioidaan kaikki tiedoston tekstit -> PgAdminissa painetaan hiiren oikeaa painiketta Kannykkaliittymat tietokannan kohdalla ja valitaan valikosta Query Tool.
 Kopioitu teksti liitet‰‰n nyt PgAdminin tekstikentt‰‰n ja ajetaan se painamalla F5. T‰m‰n j‰lkeen tietokannan Schemas -> Tables osioon tulee taulut liittyma, perusliittyma, prepaidliittyma ja yritysliittyma.
  
 Nyt k‰ynnistet‰‰n ohjelma Visual Basicilla. Ohjelman k‰ynnistyess‰ tulostuu valikko. Valikosta voi valita tallennetaanko yritys-, perus- tai prepaidliittym‰n tiedot.
